@@ -1,5 +1,9 @@
 import { type ReactElement } from "react";
+import { Icon } from "@iconify/react";
 
 export default function Home(): ReactElement {
-  return <>hello world</>;
+  return <>
+    hello nasubi
+    <Icon icon="twemoji:eggplant" />
+  </>;
 }
