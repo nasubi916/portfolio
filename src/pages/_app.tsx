@@ -23,6 +23,7 @@ const theme = createTheme({
       "#52228d",
     ],
   },
+  white: "#e7e7e7",
   primaryColor: "purple",
   primaryShade: 6,
   fontFamily: "Noto Serif JP,sans-serif",

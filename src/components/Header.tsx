@@ -1,20 +1,20 @@
 import { type ReactElement } from "react";
+import { useStore } from "@nanostores/react";
 import { Icon } from "@iconify/react";
 import {
   ActionIcon,
-  useComputedColorScheme,
   useMantineColorScheme,
   Text,
   Flex,
   Divider,
 } from "@mantine/core";
+import { $colorScheme } from "../stores/option";
 import { styled as p } from "../../styled-system/jsx";
 
-export default function RootLayout(): ReactElement {
+export default function Header(): ReactElement {
   const { setColorScheme } = useMantineColorScheme();
-  const computedColorScheme = useComputedColorScheme("light", {
-    getInitialValueInEffect: true,
-  });
+  const colorScheme = useStore($colorScheme);
+  const selected = colorScheme === "light" ? "dark" : "light";
 
   return (
     <p.div h={50}>
@@ -35,7 +35,7 @@ export default function RootLayout(): ReactElement {
             </ActionIcon>
             <ActionIcon
               aria-label="Github Account"
-              color={computedColorScheme === "light" ? "black" : "white"}
+              color={colorScheme === "light" ? "black" : "white"}
               component="a"
               href="https://github.com/nasubi916"
               size="lg"
@@ -46,11 +46,10 @@ export default function RootLayout(): ReactElement {
             </ActionIcon>
             <ActionIcon
               aria-label="Toggle color scheme"
-              color={computedColorScheme === "light" ? "violet.8" : "white"}
+              color={colorScheme === "light" ? "violet.8" : "white"}
               onClick={() => {
-                setColorScheme(
-                  computedColorScheme === "light" ? "dark" : "light"
-                );
+                setColorScheme(selected);
+                $colorScheme.set(selected);
               }}
               size="lg"
               variant="outline"
@@ -58,7 +57,7 @@ export default function RootLayout(): ReactElement {
               <Icon
                 height={24}
                 icon={
-                  computedColorScheme === "light"
+                  colorScheme === "light"
                     ? "material-symbols:dark-mode-outline"
                     : "material-symbols-light:light-mode-outline"
                 }
