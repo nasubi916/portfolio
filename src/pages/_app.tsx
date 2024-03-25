@@ -1,10 +1,12 @@
 import { type ReactElement } from "react";
 import { Outlet } from "react-router-dom";
 import { MantineProvider, createTheme } from "@mantine/core";
-import "@fontsource/roboto";
-import "@mantine/core/styles.css";
 import "../global.css";
+import "@mantine/core/styles.css";
+import "@fontsource/noto-serif-jp";
+import "@fontsource-variable/noto-sans-jp";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const theme = createTheme({
   colors: {
@@ -23,14 +25,15 @@ const theme = createTheme({
   },
   primaryColor: "purple",
   primaryShade: 6,
-  fontFamily: "'roboto', sans-serif",
+  fontFamily: "Noto Serif JP,sans-serif",
 });
 
 export default function RootLayout(): ReactElement {
   return (
-      <MantineProvider defaultColorScheme="dark" theme={theme}>
-        <Header />
-        <Outlet />
-      </MantineProvider>
+    <MantineProvider defaultColorScheme="dark" theme={theme}>
+      <Header />
+      <Outlet />
+      <Footer />
+    </MantineProvider>
   );
 }

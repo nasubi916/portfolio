@@ -232,10 +232,20 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.1.tgz#16308cea045f0fc777b6ff20a9f25474dd8293d2"
   integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
 
-"@fontsource/roboto@^5.0.12":
+"@fontsource-variable/noto-sans-jp@^5.0.18":
+  version "5.0.18"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/noto-sans-jp/-/noto-sans-jp-5.0.18.tgz#82bbb879cc7770f6836b729f4e1a46859ae0cf14"
+  integrity sha512-pN/BnClLJ4t1tMWtosxq18Co/ndyhKLZsvhmf/0DE4WS6YVJs4juhoj/HK1jyRKktc+mDPsyDAA4AMOuzld/mg==
+
+"@fontsource/noto-serif-jp@^5.0.11":
+  version "5.0.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/noto-serif-jp/-/noto-serif-jp-5.0.11.tgz#2b6c95ebe5dcfd4b42ad74a704b6897bb5fcca6b"
+  integrity sha512-6K2d6J6jxOOr3Wtz+YRk8EHOXB8N3Nj/Y0pDWL1CNLQ3zoGqBogniuQhb1R5B/+yIxd4LsCAZTj72Rm5ITzZcA==
+
+"@fontsource/yuji-syuku@^5.0.12":
   version "5.0.12"
-  resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-5.0.12.tgz#418f7305a3be7fc567dd154db20090f7ece7fc6c"
-  integrity sha512-x0o17jvgoSSbS9OZnUX2+xJmVRvVCfeaYJjkS7w62iN7CuJWtMf5vJj8LqgC7ibqIkitOHVW+XssRjgrcHn62g==
+  resolved "https://registry.yarnpkg.com/@fontsource/yuji-syuku/-/yuji-syuku-5.0.12.tgz#6427f0fee20f52703e8bafa435a0747a70dfbc0f"
+  integrity sha512-Llz0s1DczXL7FaTKwEdNB2U5DlMFRl2fGwLCWr6vjBL28sbNSPmbuf9EZ6YMagn4WJQlCcLjkFrnzcjhQGlskA==
 
 "@generouted/react-router@^1.18.5":
   version "1.18.5"
