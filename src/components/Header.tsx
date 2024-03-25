@@ -1,8 +1,8 @@
 import { type ReactElement } from "react";
-import { useStore } from "@nanostores/react";
 import { Icon } from "@iconify/react";
 import {
   ActionIcon,
+  useComputedColorScheme,
   useMantineColorScheme,
   Text,
   Flex,
@@ -13,7 +13,10 @@ import { styled as p } from "../../styled-system/jsx";
 
 export default function Header(): ReactElement {
   const { setColorScheme } = useMantineColorScheme();
-  const colorScheme = useStore($colorScheme);
+  const colorScheme = useComputedColorScheme("light", {
+    getInitialValueInEffect: true,
+  });
+  $colorScheme.set(colorScheme);
   const selected = colorScheme === "light" ? "dark" : "light";
 
   return (
