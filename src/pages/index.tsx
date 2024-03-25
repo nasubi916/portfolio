@@ -18,7 +18,8 @@ export default function Home(): ReactElement {
       <Flex direction="column">
         {/* <Top /> */}
         <Profile />
-        {/* <Skills />
+        <Skills />
+        {/*
         <Awards />
         <Works />
         <Products />
