@@ -9,9 +9,6 @@ import {
   Divider,
 } from "@mantine/core";
 import { styled as p } from "../../styled-system/jsx";
-import "@fontsource/roboto";
-import "@mantine/core/styles.css";
-import "../global.css";
 
 export default function RootLayout(): ReactElement {
   const { setColorScheme } = useMantineColorScheme();
@@ -24,27 +21,51 @@ export default function RootLayout(): ReactElement {
       <p.div m={3}>
         <Flex align="center" direction="row">
           <Text size="xl">nasubi.dev</Text>
-          <ActionIcon
-            aria-label="Toggle color scheme"
-            ml="auto"
-            onClick={() => {
-              setColorScheme(
-                computedColorScheme === "light" ? "dark" : "light"
-              );
-            }}
-            size="lg"
-            variant="default"
-          >
-            <Icon
-              height={24}
-              icon={
-                computedColorScheme === "light"
-                  ? "material-symbols:dark-mode-outline"
-                  : "material-symbols-light:light-mode-outline"
-              }
-              width={24}
-            />
-          </ActionIcon>
+          <Flex gap={10} ml="auto">
+            <ActionIcon
+              aria-label="Twitter Account"
+              color="indigo.8"
+              component="a"
+              href="https://twitter.com/nasubl_"
+              size="lg"
+              target="_blank"
+              variant="outline"
+            >
+              <Icon height={24} icon="mdi:twitter" width={24} />
+            </ActionIcon>
+            <ActionIcon
+              aria-label="Github Account"
+              color={computedColorScheme === "light" ? "black" : "white"}
+              component="a"
+              href="https://github.com/nasubi916"
+              size="lg"
+              target="_blank"
+              variant="outline"
+            >
+              <Icon height={24} icon="mdi:github" width={24} />
+            </ActionIcon>
+            <ActionIcon
+              aria-label="Toggle color scheme"
+              color={computedColorScheme === "light" ? "violet.8" : "white"}
+              onClick={() => {
+                setColorScheme(
+                  computedColorScheme === "light" ? "dark" : "light"
+                );
+              }}
+              size="lg"
+              variant="outline"
+            >
+              <Icon
+                height={24}
+                icon={
+                  computedColorScheme === "light"
+                    ? "material-symbols:dark-mode-outline"
+                    : "material-symbols-light:light-mode-outline"
+                }
+                width={24}
+              />
+            </ActionIcon>
+          </Flex>
         </Flex>
       </p.div>
       <Divider size="sm" />
