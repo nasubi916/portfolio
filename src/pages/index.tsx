@@ -19,10 +19,10 @@ export default function Home(): ReactElement {
           fontWeight: "bold",
           fontFamily: "sans-serif",
         })}
-        >
+      >
         Hello 🐼!
       </div>
-        <Button>Click me</Button>
+      <Button>Click me</Button>
     </>
   );
 }
