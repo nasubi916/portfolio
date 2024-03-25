@@ -1,12 +1,12 @@
 import { type ReactElement } from "react";
 import { Icon } from "@iconify/react";
 import "@fontsource/roboto";
-import { Card, Flex, Text } from "@mantine/core";
+import { Button, Card, Flex, Text } from "@mantine/core";
 import { css } from "../../styled-system/css";
 
 export default function Home(): ReactElement {
   return (
-    <h1>
+    <>
       <Card>
         <Flex direction="row">
           <Text>nasubi</Text>
@@ -22,6 +22,7 @@ export default function Home(): ReactElement {
       >
         Hello 🐼!
       </div>
-    </h1>
+      <Button>Click me</Button>
+    </>
   );
 }
