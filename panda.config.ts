@@ -12,7 +12,30 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        fadein: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(300px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        },
+        fadeout: {
+          '0%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          },
+          '100%':{
+            opacity: '0',
+            transform: 'translateY(100px)'
+          },
+        }
+      },
+    }
   },
 
   // The output directory for your css system
