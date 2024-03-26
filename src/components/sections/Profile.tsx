@@ -20,16 +20,28 @@ export default function Profile(): ReactElement {
         justify="center"
         my={40}
       >
-        <Image
-          fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-          h={isMobile ? 200 : 200}
-          onClick={() => {
-            setIs8bit((prev) => !prev);
-          }}
-          radius="xl"
-          src={is8bit ? getImage("nasubi-8bit") : getImage("nasubi")}
-          w={isMobile ? 200 : 200}
-        />
+        <p.div position="relative">
+          <Image
+            h={isMobile ? 200 : 200}
+            onClick={() => {
+              setIs8bit((prev) => !prev);
+            }}
+            radius="xl"
+            src={getImage("nasubi")}
+            w={isMobile ? 200 : 200}
+          />
+          <p.div left={0} position="absolute" top={0} zIndex={is8bit ? 1 : -1}>
+            <Image
+              h={isMobile ? 200 : 200}
+              onClick={() => {
+                setIs8bit((prev) => !prev);
+              }}
+              radius="xl"
+              src={getImage("nasubi-8bit")}
+              w={isMobile ? 200 : 200}
+            />
+          </p.div>
+        </p.div>
         <p.div
           fontSize={30}
           lineHeight={2.0}
