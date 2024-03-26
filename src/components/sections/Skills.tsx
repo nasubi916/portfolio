@@ -74,6 +74,12 @@ const skillList: SkillData[] = [
       "エディターはこれ一択｡拡張機能が豊富で使いやすい｡(これ以外使ったこと無いだけ)",
   },
   {
+    name: "GitHub",
+    icon: "logos:github-icon",
+    description:
+      "CLIは使わない｡GUIで十分｡コミット､マージ､プルリクなど一通り扱える｡GitHub Actionsは使いたいけど使いこなせてない｡",
+  },
+  {
     name: "python",
     icon: "logos:python",
     description: "全然できない",
@@ -90,7 +96,7 @@ function Skill({ skill }: { skill: SkillData }): ReactElement {
       padding="md"
       radius="xl"
       shadow="xl"
-      w={isMobile ? 350 : 200}
+      w={isMobile ? 400 : 200}
     >
       <Flex align="center" direction="row" gap="5" mb={10}>
         <Icon height={30} icon={skill.icon} width={30} />
@@ -102,8 +108,6 @@ function Skill({ skill }: { skill: SkillData }): ReactElement {
 }
 
 export default function Skills(): ReactElement {
-  $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
-  const isMobile = $isMobile.value ?? false;
   const colorScheme = useStore($colorScheme);
 
   return (
@@ -120,7 +124,7 @@ export default function Skills(): ReactElement {
         </Text>
       </Center>
       <Center>
-        <p.div w={isMobile ? 300 : 800}>
+        <p.div w={1200}>
           <Group
             align="center"
             justify="center"
