@@ -45,7 +45,7 @@ export default function Profile(): ReactElement {
               </Text>
             </Text>
           </Flex>
-          <p.div fontSize={20} w={isMobile ? 350 : 700}>
+          <p.div fontSize={20} w={isMobile ? 350 : 500}>
             <Text inherit>
               2005年生まれのB1｡プログラミングと読書が好きです｡
               高校1年生の頃からコードをペチペチしてます｡

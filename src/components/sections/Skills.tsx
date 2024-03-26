@@ -1,8 +1,9 @@
 import { type ReactElement } from "react";
 import { useStore } from "@nanostores/react";
 import { Icon } from "@iconify/react";
-import { Text, Center, Group, Card, Flex } from "@mantine/core";
-import { $colorScheme } from "../../stores/option";
+import { Text, Center, Group, Card, Flex, em } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
+import { $colorScheme, $isMobile } from "../../stores/option";
 import { styled as p } from "../../../styled-system/jsx";
 
 type SkillData = {
@@ -38,7 +39,7 @@ const skillList: SkillData[] = [
   {
     name: "Next",
     icon: "logos:nextjs-icon",
-    description: "SSGしてみたいけど､バンドルサイズがでけえ｡",
+    description: "SSGしてみたいけど､プロジェクトスケールがデカすぎる｡",
   },
   {
     name: "C",
@@ -80,8 +81,17 @@ const skillList: SkillData[] = [
 ];
 
 function Skill({ skill }: { skill: SkillData }): ReactElement {
+  $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
+  const isMobile = $isMobile.value ?? false;
   return (
-    <Card key={skill.name} h={200} padding="md" radius="xl" shadow="xl" w={200}>
+    <Card
+      key={skill.name}
+      h={200}
+      padding="md"
+      radius="xl"
+      shadow="xl"
+      w={isMobile ? 350 : 200}
+    >
       <Flex align="center" direction="row" gap="5" mb={10}>
         <Icon height={30} icon={skill.icon} width={30} />
         <Text size="xl">{skill.name}</Text>
@@ -92,20 +102,25 @@ function Skill({ skill }: { skill: SkillData }): ReactElement {
 }
 
 export default function Skills(): ReactElement {
+  $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
+  const isMobile = $isMobile.value ?? false;
   const colorScheme = useStore($colorScheme);
+
   return (
     <p.div
       bg={colorScheme === "light" ? "gray.400" : "gray.800"}
       fontFamily="Noto sans JP"
       fontSize={30}
-      py={20}
+      pb={20}
       w="100%"
     >
-      <Text ff="Noto serif jp" inherit mx={20}>
-        Skills
-      </Text>
+      <Center my={20}>
+        <Text ff="Noto serif jp" inherit mx={20}>
+          Skills
+        </Text>
+      </Center>
       <Center>
-        <p.div w={800}>
+        <p.div w={isMobile ? 300 : 800}>
           <Group
             align="center"
             justify="center"
