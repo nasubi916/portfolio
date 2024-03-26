@@ -59,8 +59,7 @@ const skillList: SkillData[] = [
   {
     name: "supabase",
     icon: "logos:supabase-icon",
-    description:
-      "Firebaseの代替｡SQLが使えるのがいい｡Webサイトのモダン具合がすごい｡",
+    description: "SQLが使えるのがいい｡Dashboardのモダン具合がすごい｡",
   },
   {
     name: "CloudFlare",
@@ -98,9 +97,13 @@ export default function Skills(): ReactElement {
     <p.div
       bg={colorScheme === "light" ? "gray.400" : "gray.800"}
       fontFamily="Noto sans JP"
+      fontSize={30}
       py={20}
       w="100%"
     >
+      <Text ff="Noto serif jp" inherit mx={20}>
+        Skills
+      </Text>
       <Center>
         <p.div w={800}>
           <Group
