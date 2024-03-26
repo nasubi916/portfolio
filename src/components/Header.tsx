@@ -6,7 +6,6 @@ import {
   useMantineColorScheme,
   Text,
   Flex,
-  Divider,
 } from "@mantine/core";
 import { $colorScheme } from "../stores/option";
 import { styled as p } from "../../styled-system/jsx";
@@ -70,7 +69,6 @@ export default function Header(): ReactElement {
           </Flex>
         </Flex>
       </p.div>
-      <Divider size="sm" />
     </p.div>
   );
 }
