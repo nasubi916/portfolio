@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { MantineProvider, createTheme } from "@mantine/core";
 import "../global.css";
 import "@mantine/core/styles.css";
+import '@mantine/charts/styles.css';
 import "@fontsource/noto-serif-jp";
 import "@fontsource-variable/noto-sans-jp";
 import Header from "../components/Header";

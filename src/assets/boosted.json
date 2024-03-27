@@ -1,0 +1,122 @@
+[
+  {
+    "year_month": "2023-04",
+    "Program": 285438,
+    "Read": 16715,
+    "Study": 6557,
+    "Write": 0,
+    "anime": 52455,
+    "game": 35677,
+    "movie": 3464
+  },
+  {
+    "year_month": "2023-05",
+    "Program": 130625,
+    "Read": 37749,
+    "Study": 205523,
+    "Write": 0,
+    "anime": 167835,
+    "game": 110370,
+    "movie": 18113
+  },
+  {
+    "year_month": "2023-06",
+    "Program": 70486,
+    "Read": 25373,
+    "Study": 146427,
+    "Write": 0,
+    "anime": 181317,
+    "game": 125275,
+    "movie": 27207
+  },
+  {
+    "year_month": "2023-07",
+    "Program": 289539,
+    "Read": 99781,
+    "Study": 1860,
+    "Write": 0,
+    "anime": 251648,
+    "game": 283828,
+    "movie": 78851
+  },
+  {
+    "year_month": "2023-08",
+    "Program": 134534,
+    "Read": 75108,
+    "Study": 3957,
+    "Write": 0,
+    "anime": 147300,
+    "game": 60560,
+    "movie": 65484
+  },
+  {
+    "year_month": "2023-09",
+    "Program": 112685,
+    "Read": 63979,
+    "Study": 0,
+    "Write": 0,
+    "anime": 156115,
+    "game": 98576,
+    "movie": 86111
+  },
+  {
+    "year_month": "2023-10",
+    "Program": 201239,
+    "Read": 134789,
+    "Study": 122542,
+    "Write": 0,
+    "anime": 112221,
+    "game": 39931,
+    "movie": 19238
+  },
+  {
+    "year_month": "2023-11",
+    "Program": 251190,
+    "Read": 86199,
+    "Study": 6587,
+    "Write": 0,
+    "anime": 161991,
+    "game": 17470,
+    "movie": 20113
+  },
+  {
+    "year_month": "2023-12",
+    "Program": 303454,
+    "Read": 119426,
+    "Study": 0,
+    "Write": 0,
+    "anime": 33183,
+    "game": 123204,
+    "movie": 38988
+  },
+  {
+    "year_month": "2024-01",
+    "Program": 2713,
+    "Read": 139046,
+    "Study": 57714,
+    "Write": 62008,
+    "anime": 66020,
+    "game": 254003,
+    "movie": 128925
+  },
+  {
+    "year_month": "2024-02",
+    "Program": 0,
+    "Read": 98969,
+    "Study": 73932,
+    "Write": 18572,
+    "anime": 79034,
+    "game": 417665,
+    "movie": 12532
+  },
+  {
+    "year_month": "2024-03",
+    "Program": 211517,
+    "Read": 47539,
+    "Study": 89486,
+    "Write": 3148,
+    "anime": 18865,
+    "game": 167528,
+    "movie": 19009
+  }
+]
