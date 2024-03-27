@@ -1,8 +1,10 @@
-import { useMemo, useReducer, type ReactElement } from "react";
-import { Text, Center, Group, Flex, em, Divider } from "@mantine/core";
+import { useMemo, useReducer, useState, type ReactElement } from "react";
+import { Text, Center, Group, Flex, em, Divider, Image } from "@mantine/core";
 import { useMediaQuery, useInViewport } from "@mantine/hooks";
+import ReactplosiveModal from "reactplosive-modal";
 import { $isMobile } from "../../stores/option";
 import { styled as p } from "../../../styled-system/jsx";
+import { getImage } from "../../utils";
 
 type ExperienceData = {
   name: string;
@@ -118,8 +120,10 @@ function Experience({
 export default function Experiences(): ReactElement {
   $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
   const isMobile = $isMobile.value ?? false;
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [finished, updateFinished] = useReducer(() => true, false);
   return (
-    <p.div fontFamily="Noto sans JP" fontSize={30} pb={20} w="100%">
+    <p.div fontFamily="Noto sans JP" fontSize={30} position="relative" w="100%">
       <Center>
         <Text ff="Noto serif jp" inherit my={20}>
           Experiences
@@ -136,6 +140,35 @@ export default function Experiences(): ReactElement {
           ))}
         </p.div>
       </Center>
+      {!finished && (
+        <p.div bottom={0} position="absolute" right={0}>
+          <Flex align="end" direction="row" gap={10}>
+            <Text size="sm">画像はいらすとやさんのものを使用しています｡</Text>
+            <Image
+              h={100}
+              mx={10}
+              onClick={() => {
+                setIsModalVisible(true);
+                setTimeout(() => {
+                  updateFinished();
+                }, 10000);
+              }}
+              src={getImage("bom")}
+              w="auto"
+            />
+          </Flex>
+          <ReactplosiveModal
+            isVisible={isModalVisible}
+            onClose={() => {
+              setIsModalVisible(false);
+            }}
+          >
+            <Text size="lg">
+              いらすとやさんの画像がいくらかわいくても､爆弾は触らないほうが良いと思います｡
+            </Text>
+          </ReactplosiveModal>
+        </p.div>
+      )}
     </p.div>
   );
 }

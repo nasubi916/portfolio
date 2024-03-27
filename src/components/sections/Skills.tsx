@@ -75,7 +75,7 @@ const skillList: SkillData[] = [
   },
   {
     name: "GitHub",
-    icon: "logos:github-icon",
+    icon: "mdi:github",
     description:
       "CLIは使わない｡GUIで十分｡コミット､マージ､プルリクなど一通り扱える｡GitHub Actionsは使いたいけど使いこなせてない｡",
   },
@@ -85,6 +85,11 @@ const skillList: SkillData[] = [
     description:
       "このサイトの下部にあるグラフを作るのに使いました｡pandasとお友達になりたい｡",
   },
+  {
+    name: "obsidian",
+    icon: "logos:obsidian-icon",
+    description:"markdown記法で書けるメモアプリ｡開発に直接活きることはないが､アイデアや思考をまとめるのに便利｡QoL爆上がり｡"
+  }
 ];
 
 function Skill({ skill }: { skill: SkillData }): ReactElement {

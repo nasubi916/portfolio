@@ -1,5 +1,6 @@
-import { type ReactElement, useState,useRef  } from "react";
+import { type ReactElement, useState } from "react";
 import { Icon } from "@iconify/react";
+import { useStore } from "@nanostores/react";
 import {
   Text,
   Center,
@@ -12,7 +13,6 @@ import {
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { BarChart } from "@mantine/charts";
-import { useStore } from "@nanostores/react";
 import boosted from "../../assets/boosted.json";
 import { $colorScheme, $isMobile } from "../../stores/option";
 import { styled as p } from "../../../styled-system/jsx";
@@ -26,38 +26,75 @@ type HobbyData = {
 const hobbiesList: HobbyData[] = [
   {
     name: "Program",
-    description:
-      "Webアプリケーションを作るのが好きです｡最近はReact + Vite + TypeScriptで開発しています｡高校の頃はVueでコードを書いたので､Reactの仕様に苦戦している｡特に単方向バインディングとエコシステム辺りが違いすぎて勉強中｡",
+    description: `Webアプリケーションを作るのが好きです｡
+      最近はReact + Vite + TypeScriptで開発しています｡
+      高校の頃はVueでコードを書いたので､Reactの仕様に苦戦している｡
+      特に単方向バインディングとエコシステム辺りが違いすぎて勉強中｡`,
   },
   {
     name: "Read",
-    description:
-      "本好きが高じて本屋でバイトをはじめました｡愛書は中村文則の｢遮光｣です｡",
+    description: `本好きが高じて本屋でバイトをはじめました｡
+    愛書は中村文則の｢遮光｣です｡"恋人だったもの"をいつも持ち歩いている虚言癖のある男の話なのですが､
+    こんなあらすじだけでは伝わらない良さが詰まっているのでぜひ読んでください｡なんなら私が貸します｡
+    他にも伊藤計劃のユートピアな世界に馴染めない女の子達の壮大な自殺計画｢ハーモニー｣､
+    チャック・パラニュークの独特の読み応えのある文章がクセになる｢ファイト・クラブ｣も面白いので布教計画を立案中...`,
   },
   {
     name: "Anime",
-    description:
-      "placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text placement text ",
-  },
-  {
-    name: "Game",
-    description:
-      "placement text placement text placement text placement text placement text ",
+    description: `90's年代のアニメが好きです｡ARIAとか新世紀エヴァンゲリオンとかFLCLが好みド直球｡
+    京アニやきらら作品も好きです｡というか､アニメぜんぶ好きです｡
+    声優には詳しくない｡黒沢ともよさんと悠木碧さんしかわからない｡あと杉田さん｡`,
   },
   {
     name: "Movie",
-    description:
-      "placement text placement text placement text placement text placement text ",
+    description: `デビッド・フィンチャー監督のFight ClubとかSevenなどのバイオレンス&サスペンスが好きです｡
+    ノーラン監督のSF映画､TENETとかインターステラーもインセプションも全てが好きです｡ブレードランナーも勿論好き｡
+    ディカプリオ様の素晴らしさはCatch Me If You Canかウルフ・オブ・ウォールストリートを観ればわかる｡
+    でも､インターステラー観たあとにウルフ・オブ・ウォールストリート観ると､マシュー・マコノヒーの演じるキャラが真逆すぎて違和感を感じる｡
+    90～00's年代のショーシャンクの空に､LEON､フォレスト・ガンプ､ユージュアル・サスペクツとかの古典と言われ始めてもおかしくない､でも今見ても面白い名作も好き｡
+    面白い映画募集中｡`,
+  },
+  {
+    name: "Game",
+    description: `3DSを押し入れから発掘してとび森とルーンファクトリー4をやっています｡
+      ノベルゲームも好きでGNOSIAもNEEDY GIRL OVERDOSEもダンガンロンパも面白かった｡
+      他にもポーションクラフトやSlay the Spireのようなチルいゲームも好きです｡`,
+  },
+  {
+    name: "Moh-jong",
+    description: `麻雀が好きです｡雀魂ランクはもうそろそろ雀傑に上がりそうで上がらない｡
+    最近､スジとタテを覚えたので､もう少し上達したいです｡
+    麻雀はゲームではない｡麻雀はスポーツです｡
+    実卓で打ってみたいけど､雀魂でしか打たないからルールを間違えそう｡`,
   },
   {
     name: "History",
-    description:
-      "ヨーロッパ史が大好き｡特にウェストファリア体制～第一次世界大戦に至るまでなら結構語れますし､語り合いたい｡推し国家はロシア帝国です｡",
+    description: `ヨーロッパ史が大好き｡
+      特にウェストファリア体制～第一次世界大戦に至るまでの経緯は何度勉強してもおもしろい｡
+      推し国家はロシア帝国です｡
+      ピョートル大帝の改革により､ロシア社会は一気に欧化した｡
+      でもそれは表面的なものであり､ウィーンやパリの人々のマネをするだけで文化の下地となる習慣や価値観を受け入れることはなかった｡
+      文化を仕入れたところで､それを受け入れる土壌がないと､それはただの模倣にすぎない｡
+      ドイツ人であるエカテリーナ二世も日記でロシアについてこのように分析していた｡
+      実際に､ロシア国内で流通する本はフランス語かドイツ語で書かれていた｡
+      こんな状況と民主主義思想の浸透が重なり､知識人は自分たちはヨーロッパ人なのかスラブ人なのかというアイデンティティの危機に直面していた｡
+      それがロシア革命の背景にあると思う｡
+      まあ､実際は単純に食料に困っただけだと思いますが｡`,
   },
   {
     name: "Write",
-    description:
-      "マークダウン記法で書けるobsidianを使って日記を書いています｡これからは外へ発信もしていきたい｡",
+    description: `マークダウン記法で書けるobsidianを使って日記を書いています｡
+    キャッチアップだけでなく､これからは外へ発信もしていきたい｡`,
+  },
+  {
+    name: "Music",
+    description: `SoundCloudで音楽を聴いています｡
+    House Techno Electro Dubstep Kawaii future buss好きです｡
+    ボカロも邦楽も洋楽も一通り聴いてます｡
+    春のM3に興味があるけど一人じゃ行く気にならない｡行きたい人いないかな｡
+    好きなアーティストはAiobahn fusq PSYQUI NekoHacker va1ue volta RYOQUCHA KOTONOHOUSE
+    9W3R7Y PinkBamboo Connexio abysslnoiz TEMPLIME PIKASONIC RANGE ASUNDER TOKYOMACHINE｡
+    `,
   },
 ];
 
@@ -75,7 +112,11 @@ function Hobby({
       <Flex align="center" direction="column" gap={10}>
         <Text inherit>{name}</Text>
         <p.div fontSize={16}>
-          <Spoiler hideLabel="オタクの長尺の語りウザいから消すボタン" maxHeight={200} showLabel="もっとみせる">
+          <Spoiler
+            hideLabel="オタクの長尺の語りウザいから消すボタン"
+            maxHeight={100}
+            showLabel="もっとみせる"
+          >
             <Text inherit>{description}</Text>
           </Spoiler>
         </p.div>

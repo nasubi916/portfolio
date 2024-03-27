@@ -1,7 +1,7 @@
 import { type ReactElement, useState } from "react";
 import { Icon } from "@iconify/react";
-import { Text, Center, Flex, Image, em } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
+import { Text, Center, Flex, Image, em, Transition } from "@mantine/core";
+import { useMediaQuery, useHover } from "@mantine/hooks";
 import { getImage } from "../../utils";
 import { $isMobile } from "../../stores/option";
 import { styled as p } from "../../../styled-system/jsx";
@@ -9,6 +9,7 @@ import { styled as p } from "../../../styled-system/jsx";
 export default function Profile(): ReactElement {
   $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
   const isMobile = $isMobile.value ?? false;
+  const { hovered, ref } = useHover();
   const [is8bit, setIs8bit] = useState(false);
 
   return (
@@ -54,7 +55,23 @@ export default function Profile(): ReactElement {
           </p.div>
           <p.div fontSize={30} lineHeight={2.0} textAlign="left">
             <Flex align="center" direction="row" gap={10}>
-              <Icon icon="twemoji:eggplant" />
+              <p.div ref={ref} position="relative">
+                <Icon icon="twemoji:eggplant" />
+                <p.div left={-2} position="absolute" top={-30}>
+                  <Transition
+                    duration={400}
+                    mounted={hovered}
+                    timingFunction="ease"
+                    transition="pop"
+                  >
+                    {(styles) => (
+                      <Text style={styles} w={80}>
+                        \ｺﾝﾆﾁﾊ/
+                      </Text>
+                    )}
+                  </Transition>
+                </p.div>
+              </p.div>
               <Text inherit>
                 なすび
                 <Text ml={5} size="md" span>
