@@ -1,28 +1,7 @@
-import {
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-  type ReactElement,
-} from "react";
-import { useStore } from "@nanostores/react";
-import { Icon } from "@iconify/react";
-import {
-  Text,
-  Center,
-  Group,
-  Card,
-  Flex,
-  em,
-  Collapse,
-  Box,
-  Timeline,
-  ActionIcon,
-  Divider,
-  Skeleton,
-} from "@mantine/core";
-import { useMediaQuery, useHover, useInViewport } from "@mantine/hooks";
-import { $colorScheme, $isMobile } from "../../stores/option";
+import { useMemo, useReducer, type ReactElement } from "react";
+import { Text, Center, Group, Flex, em, Divider } from "@mantine/core";
+import { useMediaQuery, useInViewport } from "@mantine/hooks";
+import { $isMobile } from "../../stores/option";
 import { styled as p } from "../../../styled-system/jsx";
 
 type ExperienceData = {
@@ -49,7 +28,7 @@ const ExperiencesList: ExperienceData[] = [
     name: "情報システム部",
     date: "2021年4月 - 2024年3月",
     state: "done",
-    description: "ここで人生は好転した｡",
+    description: "入部｡",
   },
   {
     name: "ITパスポート合格",
@@ -147,7 +126,7 @@ export default function Experiences(): ReactElement {
         </Text>
       </Center>
       <Center>
-        <p.div h={2000} m={3} w={isMobile ? 500 : 700}>
+        <p.div h={1300} m={3} w={isMobile ? 500 : 700}>
           {ExperiencesList.map((experience, index) => (
             <Experience
               key={experience.name}

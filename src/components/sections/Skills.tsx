@@ -82,7 +82,8 @@ const skillList: SkillData[] = [
   {
     name: "python",
     icon: "logos:python",
-    description: "全然できない",
+    description:
+      "このサイトの下部にあるグラフを作るのに使いました｡pandasとお友達になりたい｡",
   },
 ];
 
@@ -90,20 +91,24 @@ function Skill({ skill }: { skill: SkillData }): ReactElement {
   $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
   const isMobile = $isMobile.value ?? false;
   return (
-    <Card
-      key={skill.name}
-      h={200}
-      padding="md"
-      radius="xl"
-      shadow="xl"
-      w={isMobile ? 400 : 200}
-    >
-      <Flex align="center" direction="row" gap="5" mb={10}>
-        <Icon height={30} icon={skill.icon} width={30} />
-        <Text size="xl">{skill.name}</Text>
-      </Flex>
-      <Text size="sm">{skill.description}</Text>
-    </Card>
+    <p.div fontFamily="Noto sans JP" fontSize={25}>
+      <Card
+        key={skill.name}
+        h={200}
+        padding="md"
+        radius="xl"
+        shadow="xl"
+        w={isMobile ? 400 : 300}
+      >
+        <Flex align="center" direction="row" gap="5" mb={10}>
+          <Icon height={30} icon={skill.icon} width={30} />
+          <Text inherit>{skill.name}</Text>
+        </Flex>
+        <p.div fontSize={16}>
+          <Text>{skill.description}</Text>
+        </p.div>
+      </Card>
+    </p.div>
   );
 }
 
