@@ -167,7 +167,7 @@ function Skill({
               <Text inherit>{skill.name}</Text>
             </Flex>
             <p.div fontSize={16}>
-              <Text>{skill.description}</Text>
+              <Text inherit>{skill.description}</Text>
             </p.div>
           </Card>
         </p.div>

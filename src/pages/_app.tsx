@@ -1,9 +1,11 @@
 import { type ReactElement } from "react";
 import { Outlet } from "react-router-dom";
 import { MantineProvider, createTheme } from "@mantine/core";
+import { styled as p } from "../../styled-system/jsx";
+import { css } from "../../styled-system/css";
 import "../global.css";
 import "@mantine/core/styles.css";
-import '@mantine/charts/styles.css';
+import "@mantine/charts/styles.css";
 import "@fontsource/noto-serif-jp";
 import "@fontsource-variable/noto-sans-jp";
 import Header from "../components/Header";
@@ -32,10 +34,12 @@ const theme = createTheme({
 
 export default function RootLayout(): ReactElement {
   return (
-    <MantineProvider defaultColorScheme="dark" theme={theme}>
-      <Header />
-      <Outlet />
-      <Footer />
-    </MantineProvider>
+    <p.div className={css({ scrollbar: "hidden" })}>
+      <MantineProvider defaultColorScheme="dark" theme={theme}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </MantineProvider>
+    </p.div>
   );
 }
