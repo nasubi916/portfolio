@@ -19,17 +19,12 @@ export default function Top(): ReactElement {
         bottom={20}
         color="white"
         fontFamily="Noto serif JP"
-        fontSize={isMobile ? 30 : 80}
+        fontSize={isMobile ? 30 : 50}
         left={50}
         position="absolute"
         textAlign="center"
       >
         言葉はまだ行いじゃない
-        {/*
-        他人を蹴落とし合って低め合うのがインターネット
-        成し遂げたければ､命ではなく生涯を
-        思ったことをすぐ口に出すのは美徳ではない
-         */}
       </p.div>
     </p.div>
   );
