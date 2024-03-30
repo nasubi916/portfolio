@@ -1,5 +1,5 @@
 import { useMemo, useReducer, type ReactElement } from "react";
-import { Text, Center, Group, Flex, em, Divider, } from "@mantine/core";
+import { Text, Center, Group, Flex, em, Divider } from "@mantine/core";
 import { useMediaQuery, useInViewport } from "@mantine/hooks";
 import { $isMobile } from "../../stores/option";
 import { styled as p } from "../../../styled-system/jsx";
@@ -76,7 +76,7 @@ function Experience({
   return (
     <p.div position="relative">
       <p.div
-        animation={inViewport || finished ? "fadein 1s" : ""}
+        animation={inViewport || finished ? "moveYbt 1s" : ""}
         display={inViewport || finished ? "" : "none"}
       >
         {index !== 0 && (
@@ -136,7 +136,6 @@ export default function Experiences(): ReactElement {
           ))}
         </p.div>
       </Center>
-
     </p.div>
   );
 }
