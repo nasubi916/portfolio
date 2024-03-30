@@ -79,7 +79,8 @@ const skillList: SkillData[] = [
     name: "supabase",
     icon: "logos:supabase-icon",
     link: "https://supabase.io",
-    description: "SQLが使えるのが良き｡型を自動出力してくれるのが嬉しい｡Dashboardのモダン具合がすごい｡",
+    description:
+      "SQLが使えるのが良き｡型を自動出力してくれるのが嬉しい｡Dashboardのモダン具合がすごい｡",
   },
   {
     name: "CloudFlare",
@@ -124,17 +125,13 @@ function Skill({
   skill: SkillData;
   selected: number;
 }): ReactElement {
-  const [before, setBefore] = useState(0);
   const [opened, setOpened] = useState(false);
 
   useEffect(() => {
-    if (selected !== before) {
-      setOpened(false);
-      setBefore(selected);
-      setTimeout(() => {
-        setOpened(true);
-      }, 100);
-    }
+    setOpened(false);
+    setTimeout(() => {
+      setOpened(true);
+    }, 200);
   }, [selected]);
 
   return (

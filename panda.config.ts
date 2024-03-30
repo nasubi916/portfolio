@@ -14,7 +14,7 @@ export default defineConfig({
   theme: {
     extend: {
       keyframes: {
-        fadein: {
+        moveYbt: {
           '0%': {
             opacity: '0',
             transform: 'translateY(300px)'
@@ -24,16 +24,37 @@ export default defineConfig({
             transform: 'translateY(0)'
           }
         },
-        fadeout: {
+        moveYtb: {
           '0%': {
             opacity: '1',
             transform: 'translateY(0)'
           },
           '100%':{
             opacity: '0',
-            transform: 'translateY(100px)'
+            transform: 'translateY(300px)'
           },
-        }
+        },
+        fadein: {
+          '0%': {
+            opacity: '0'
+          },
+          "50%": {
+            opacity: "0",
+          },
+          '100%': {
+            opacity: '1'
+          }
+        },
+        cursor: {
+          "50%": {
+            borderRightColor: "transparent",
+          },
+        },
+        typing: {
+          from: {
+            width: "0",
+          },
+        },
       },
     }
   },
