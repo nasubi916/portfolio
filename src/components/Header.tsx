@@ -8,12 +8,13 @@ import {
   Flex,
   Center,
 } from "@mantine/core";
-import { useWindowEvent } from "@mantine/hooks";
+import { useWindowEvent, useOs } from "@mantine/hooks";
 import { $colorScheme } from "../stores/option";
 import { styled as p } from "../../styled-system/jsx";
 
 export default function Header(): ReactElement {
   const [enterAnimation, toggleEnterAnimation] = useReducer(() => true, false);
+  const os = useOs();
   const { setColorScheme } = useMantineColorScheme();
   const colorScheme = useComputedColorScheme("light", {
     getInitialValueInEffect: true,
@@ -33,18 +34,35 @@ export default function Header(): ReactElement {
       {!enterAnimation && (
         <Center>
           <p.div position="absolute" textAlign="center" top="50%" zIndex={10}>
-            <p.div
-              animation="cursor .7s infinite alternate ,typing 1s steps(10)"
-              borderRight="1px solid white"
-              fontFamily="Noto Serif JP"
-              fontSize={50}
-              letterSpacing="5px"
-              overflow="hidden"
-              width="100%"
-            >
-              nasubi.dev
+            <Flex align="center" direction="row" gap={3}>
+              <p.div
+                animation="cursor .7s infinite alternate ,typing 1s steps(10)"
+                borderRight="1px solid white"
+                fontFamily="Noto Serif JP"
+                fontSize={50}
+                letterSpacing="5px"
+                overflow="hidden"
+                width="100%"
+              >
+                nasubi.dev
+              </p.div>
+              <Icon
+                height={50}
+                icon="material-symbols:keyboard-return"
+                width={50}
+              />
+            </Flex>
+            <p.div animation="fadein 3s">
+              please{" "}
+              <b>
+                {os === "windows" ? "Enter" : ""}
+                {os === "macos" ? "Return" : ""}
+                {os === "linux" ? "Return" : ""}
+                {os === "android" ? "Tap" : ""}
+                {os === "ios" ? "Tap" : ""}
+                {os === "undetermined" ? "Enter" : ""}
+              </b>
             </p.div>
-            <p.div animation="fadein 3s">please Enter</p.div>
           </p.div>
         </Center>
       )}
