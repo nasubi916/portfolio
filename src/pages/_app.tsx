@@ -2,7 +2,6 @@ import { type ReactElement } from "react";
 import { Outlet } from "react-router-dom";
 import { MantineProvider, createTheme } from "@mantine/core";
 import { styled as p } from "../../styled-system/jsx";
-import { css } from "../../styled-system/css";
 import "../global.css";
 import "@mantine/core/styles.css";
 import "@mantine/charts/styles.css";
