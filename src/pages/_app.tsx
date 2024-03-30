@@ -34,7 +34,7 @@ const theme = createTheme({
 
 export default function RootLayout(): ReactElement {
   return (
-    <p.div className={css({ scrollbar: "hidden" })}>
+    <p.div overflow="hidden">
       <MantineProvider defaultColorScheme="dark" theme={theme}>
         <Header />
         <Outlet />
