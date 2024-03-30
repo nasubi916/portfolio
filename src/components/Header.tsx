@@ -28,6 +28,10 @@ export default function Header(): ReactElement {
       toggleEnterAnimation();
     }
   });
+  useWindowEvent("touchstart", (event) => {
+    event.preventDefault();
+    toggleEnterAnimation();
+  });
 
   return (
     <p.div h={enterAnimation ? "50" : "100vh"} mt={3} mx={3}>
