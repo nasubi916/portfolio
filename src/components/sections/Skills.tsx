@@ -264,18 +264,6 @@ export default function Skills(): ReactElement {
         </p.div>
       </Center>
       <Center>
-        {/* <p.div w={1200}>
-          <Group
-            align="center"
-            justify="center"
-            style={{ columnGap: 68 }}
-            wrap="wrap"
-          >
-          {skillList.map((skill) => (
-            ))}
-            </Group>
-          </p.div> */}
-
         <Skill selected={selected} skill={skillList[selected]} />
       </Center>
     </p.div>
