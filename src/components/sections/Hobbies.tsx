@@ -13,7 +13,7 @@ import {
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { BarChart } from "@mantine/charts";
-import boosted from "../../assets/boosted.json";
+import boosted from "../../assets/data/boosted.json";
 import { $colorScheme, $isMobile } from "../../stores/option";
 import { styled as p } from "../../../styled-system/jsx";
 
