@@ -45,6 +45,14 @@ export default defineConfig({
             opacity: '1'
           }
         },
+        fadeout: {
+          '0%': {
+            opacity: '1'
+          },
+          '100%': {
+            opacity: '0'
+          }
+        },
         cursor: {
           "50%": {
             borderRightColor: "transparent",

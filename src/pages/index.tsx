@@ -1,10 +1,6 @@
-import { useReducer, type ReactElement } from "react";
+import { useEffect, useReducer, type ReactElement } from "react";
 import { Icon } from "@iconify/react";
-import {
-  Center,
-  Flex,
-  useComputedColorScheme,
-} from "@mantine/core";
+import { Center, Flex, useComputedColorScheme } from "@mantine/core";
 import { useOs, useWindowEvent } from "@mantine/hooks";
 import { styled as p } from "../../styled-system/jsx";
 import Header from "../components/Header";
@@ -22,25 +18,55 @@ import { $colorScheme } from "../stores/option";
 
 export default function Home(): ReactElement {
   const [enterAnimation, toggleEnterAnimation] = useReducer(() => true, false);
+  const [isEndAnimation, toggleEndAnimation] = useReducer(() => true, false);
   const os = useOs();
   const colorScheme = useComputedColorScheme("light", {
     getInitialValueInEffect: true,
   });
   $colorScheme.set(colorScheme);
 
-  useWindowEvent("keydown", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      toggleEnterAnimation();
+  function scrollHandler(event: Event): void {
+    event.preventDefault();
+  }
+  useEffect(() => {
+    if (!isEndAnimation) {
+      document.addEventListener("touchmove", scrollHandler, { passive: false });
+      document.addEventListener("scroll", scrollHandler, { passive: false });
+      document.addEventListener("wheel", scrollHandler, { passive: false });
     }
-  });
-  useWindowEvent("touchstart", (event) => {
+    return () => {
+      document.removeEventListener("touchmove", scrollHandler);
+      document.removeEventListener("scroll", scrollHandler);
+      document.removeEventListener("wheel", scrollHandler);
+    };
+  }, [isEndAnimation]);
+
+  function handleEvent(event: Event): void {
     event.preventDefault();
     toggleEnterAnimation();
+    setTimeout(() => {
+      toggleEndAnimation();
+    }, 1000);
+  }
+
+  useWindowEvent("keydown", (event) => {
+    if (event.key === "Enter") handleEvent(event);
   });
+  useWindowEvent("touchstart", (event) => {
+    handleEvent(event);
+  });
+
   return (
     <>
-      {!enterAnimation && (
+      <p.div
+        animation={enterAnimation ? "fadeout 1s" : ""}
+        animationFillMode="forwards"
+        background="gray.800"
+        height="100vh"
+        overflow="hidden"
+        width="100vw"
+        zIndex={10}
+      >
         <Center>
           <p.div position="absolute" textAlign="center" top="50%" zIndex={10}>
             <Flex align="center" direction="row" gap={3}>
@@ -74,26 +100,24 @@ export default function Home(): ReactElement {
             </p.div>
           </p.div>
         </Center>
-      )}
-      {enterAnimation && (
-        <p.div>
-          <Header />
-          <Flex direction="column">
-            <Top />
-            <Profile />
-            <Skills />
-            <Experiences />
-            <Hobbies />
-            {/*
+      </p.div>
+      <p.div position="absolute" top={0} zIndex={isEndAnimation ? "0" : "-1"}>
+        <Header />
+        <Flex direction="column">
+          <Top />
+          <Profile />
+          <Skills />
+          <Experiences />
+          <Hobbies />
+          {/*
         <Awards />
         <Works />
         <Products />
         <Blogs />
       */}
-          </Flex>
-          <Footer />
-        </p.div>
-      )}
+        </Flex>
+        <Footer />
+      </p.div>
     </>
   );
 }
