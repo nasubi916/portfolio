@@ -7,8 +7,6 @@ import "@mantine/core/styles.css";
 import "@mantine/charts/styles.css";
 import "@fontsource/noto-serif-jp";
 import "@fontsource-variable/noto-sans-jp";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const theme = createTheme({
   colors: {
@@ -35,9 +33,7 @@ export default function RootLayout(): ReactElement {
   return (
     <p.div overflow="hidden">
       <MantineProvider defaultColorScheme="dark" theme={theme}>
-        <Header />
         <Outlet />
-        <Footer />
       </MantineProvider>
     </p.div>
   );
