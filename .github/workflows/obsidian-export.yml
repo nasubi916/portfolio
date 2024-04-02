@@ -31,4 +31,9 @@ jobs:
 
       - name: unzip obsidian-export.exe
         run: |
-          unzip file.zip
+          unzip -d temp file.zip
+          chmod +x temp/obsidian-export
+
+      - name: Run obsidian-export
+        run: |
+          ./temp/obsidian-export
