@@ -30,6 +30,7 @@ jobs:
 
       - name: unzip obsidian-export.exe
         run: |
+          mkdir temp
           tar -xf obsidian-export.tar.xz -C temp
           chmod +x temp/obsidian-export
 
