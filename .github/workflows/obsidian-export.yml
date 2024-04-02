@@ -3,6 +3,7 @@ on: [push]
   # schedule:
   #   # 定期実行する時間・・・①
   #   - cron: '0 9 * * *'
+
 jobs:
   build:
     # Ubuntuの最新版環境内で処理を実行することを指定
@@ -15,3 +16,5 @@ jobs:
           name: 'obsidian-export'
           version: '0.0.1'
           command: ./obsidian-export/obsidian-export
+      - name: test
+        run: ls -la
