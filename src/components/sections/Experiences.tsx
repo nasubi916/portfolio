@@ -23,12 +23,13 @@ const ExperiencesList: ExperienceData[] = [
     name: "愛知工業大学名電高等学校 - 情報科学科 - コンピュータシステム",
     date: "2021年4月 - 2024年3月",
     state: "done",
+    description: "入学",
   },
   {
     name: "情報システム部",
     date: "2021年4月 - 2024年3月",
     state: "done",
-    description: "入部｡",
+    description: "入部",
   },
   {
     name: "ITパスポート合格",
@@ -46,13 +47,13 @@ const ExperiencesList: ExperienceData[] = [
     name: "愛知工業大学 - 情報科学部 - 情報科学科 - コンピュータシステム専攻",
     date: "2024年4月 - 現在",
     state: "doing",
-    description: "入学｡",
+    description: "入学",
   },
   {
     name: "システム工学研究会",
     date: "2024年4月 - 現在",
     state: "doing",
-    description: "入サークル｡",
+    description: "入サークル",
   },
 ];
 
