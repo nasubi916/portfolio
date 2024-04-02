@@ -2,9 +2,10 @@ import { type ReactElement, useState } from "react";
 import { Icon } from "@iconify/react";
 import { Text, Center, Flex, Image, em, Transition } from "@mantine/core";
 import { useMediaQuery, useHover } from "@mantine/hooks";
-import { getImage } from "../../utils";
+import { styled as p } from "@panda/jsx";
 import { $isMobile } from "../../stores/option";
-import { styled as p } from "../../../styled-system/jsx";
+import nasubi from "@/assets/nasubi.png";
+import nasubi8bit from "@/assets/nasubi-8bit.png";
 
 export default function Profile(): ReactElement {
   $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
@@ -33,7 +34,7 @@ export default function Profile(): ReactElement {
                 setIs8bit((prev) => !prev);
               }}
               radius="xl"
-              src={getImage("nasubi")}
+              src={nasubi}
               w={isMobile ? 200 : 200}
             />
             <p.div
@@ -48,7 +49,7 @@ export default function Profile(): ReactElement {
                   setIs8bit((prev) => !prev);
                 }}
                 radius="xl"
-                src={getImage("nasubi-8bit")}
+                src={nasubi8bit}
                 w={isMobile ? 200 : 200}
               />
             </p.div>

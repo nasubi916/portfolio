@@ -1,9 +1,9 @@
 import { type ReactElement } from "react";
 import { Image, em } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { getImage } from "../../utils";
+import { styled as p } from "@panda/jsx";
 import { $isMobile } from "../../stores/option";
-import { styled as p } from "../../../styled-system/jsx";
+import picture from "@/assets/picture.png";
 
 export default function Top(): ReactElement {
   $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
@@ -13,7 +13,7 @@ export default function Top(): ReactElement {
       <Image
         fallbackSrc="https://placehold.co/600x400?text=Placeholder"
         h="100%"
-        src={getImage("picture")}
+        src={picture}
       />
       <p.div
         bottom={20}

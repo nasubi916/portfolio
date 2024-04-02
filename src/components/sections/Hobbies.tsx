@@ -13,9 +13,9 @@ import {
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { BarChart } from "@mantine/charts";
+import { styled as p } from "@panda/jsx";
 import boosted from "../../assets/data/boosted.json";
 import { $colorScheme, $isMobile } from "../../stores/option";
-import { styled as p } from "../../../styled-system/jsx";
 
 type HobbyData = {
   name: string;
@@ -150,7 +150,7 @@ export default function Hobbies(): ReactElement {
   return (
     <p.div
       bg={colorScheme === "light" ? "gray.400" : "gray.800"}
-      fontFamily="Noto sans JP"
+      fontFamily="sans"
       fontSize={30}
       pb={20}
       w="100%"

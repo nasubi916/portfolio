@@ -1,9 +1,6 @@
 import { type ReactElement } from "react";
-import {
-  Text,
-  Divider,
-} from "@mantine/core";
-import { styled as p } from "../../styled-system/jsx";
+import { Text, Divider } from "@mantine/core";
+import { styled as p } from "@panda/jsx";
 
 export default function Footer(): ReactElement {
   return (

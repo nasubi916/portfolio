@@ -1,8 +1,8 @@
 import { useMemo, useReducer, type ReactElement } from "react";
 import { Text, Center, Group, Flex, em, Divider } from "@mantine/core";
 import { useMediaQuery, useInViewport } from "@mantine/hooks";
+import { styled as p } from "@panda/jsx";
 import { $isMobile } from "../../stores/option";
-import { styled as p } from "../../../styled-system/jsx";
 
 type ExperienceData = {
   name: string;
@@ -120,7 +120,7 @@ export default function Experiences(): ReactElement {
   $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
   const isMobile = $isMobile.value ?? false;
   return (
-    <p.div fontFamily="Noto sans JP" fontSize={30} position="relative" w="100%">
+    <p.div fontFamily="sans" fontSize={30} position="relative" w="100%">
       <Center>
         <Text ff="Noto serif jp" inherit my={20}>
           Experiences

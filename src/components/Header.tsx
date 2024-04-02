@@ -7,8 +7,8 @@ import {
   Text,
   Flex,
 } from "@mantine/core";
+import { styled as p } from "@panda/jsx";
 import { $colorScheme } from "../stores/option";
-import { styled as p } from "../../styled-system/jsx";
 
 export default function Header(): ReactElement {
   const { setColorScheme } = useMantineColorScheme();

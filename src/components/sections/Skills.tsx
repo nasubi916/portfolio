@@ -13,8 +13,8 @@ import {
   ActionIcon,
   Transition,
 } from "@mantine/core";
+import { styled as p } from "@panda/jsx";
 import { $colorScheme } from "../../stores/option";
-import { styled as p } from "../../../styled-system/jsx";
 
 type SkillData = {
   name: string;
@@ -148,7 +148,7 @@ function Skill({
       }}
     >
       {(transitionStyle) => (
-        <p.div fontFamily="Noto sans JP" fontSize={25}>
+        <p.div fontFamily="sans" fontSize={25}>
           <Card
             key={skill.name}
             h={200}
@@ -180,7 +180,7 @@ export default function Skills(): ReactElement {
   return (
     <p.div
       bg={colorScheme === "light" ? "gray.400" : "gray.800"}
-      fontFamily="Noto sans JP"
+      fontFamily="sans"
       fontSize={30}
       pb={20}
       w="100%"
@@ -219,7 +219,7 @@ export default function Skills(): ReactElement {
                     </ActionIcon>
                   </HoverCard.Target>
                   <HoverCard.Dropdown>
-                    <p.div fontFamily="Noto sans JP">
+                    <p.div fontFamily="sans">
                       <Group>
                         <Icon
                           key={skill.name}

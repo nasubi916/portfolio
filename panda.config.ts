@@ -13,45 +13,51 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
+      tokens: {
+        fonts: {
+          sans: { value: "Noto Sans JP Variable, sans-serif" },
+          serif: { value: "Noto Serif JP, serif" },
+        },
+      },
       keyframes: {
         moveYbt: {
-          '0%': {
-            opacity: '0',
-            transform: 'translateY(300px)'
+          "0%": {
+            opacity: "0",
+            transform: "translateY(300px)",
           },
-          '100%': {
-            opacity: '1',
-            transform: 'translateY(0)'
-          }
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
         },
         moveYtb: {
-          '0%': {
-            opacity: '1',
-            transform: 'translateY(0)'
+          "0%": {
+            opacity: "1",
+            transform: "translateY(0)",
           },
-          '100%':{
-            opacity: '0',
-            transform: 'translateY(300px)'
+          "100%": {
+            opacity: "0",
+            transform: "translateY(300px)",
           },
         },
         fadein: {
-          '0%': {
-            opacity: '0'
+          "0%": {
+            opacity: "0",
           },
           "50%": {
             opacity: "0",
           },
-          '100%': {
-            opacity: '1'
-          }
+          "100%": {
+            opacity: "1",
+          },
         },
         fadeout: {
-          '0%': {
-            opacity: '1'
+          "0%": {
+            opacity: "1",
           },
-          '100%': {
-            opacity: '0'
-          }
+          "100%": {
+            opacity: "0",
+          },
         },
         cursor: {
           "50%": {
@@ -64,10 +70,10 @@ export default defineConfig({
           },
         },
       },
-    }
+    },
   },
 
   // The output directory for your css system
-  outdir: "styled-system",
+  outdir: "panda",
   jsxFramework: "react",
 });
