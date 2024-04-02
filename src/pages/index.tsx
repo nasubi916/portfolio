@@ -61,11 +61,10 @@ export default function Home(): ReactElement {
       <p.div
         animation={enterAnimation ? "fadeout 1s" : ""}
         animationFillMode="forwards"
-        background="gray.800"
+        background={colorScheme === "light" ? "gray.200" : "gray.900"}
         height="100vh"
         overflow="hidden"
         width="100vw"
-        zIndex={10}
       >
         <Center>
           <p.div position="absolute" textAlign="center" top="50%" zIndex={10}>
@@ -101,7 +100,12 @@ export default function Home(): ReactElement {
           </p.div>
         </Center>
       </p.div>
-      <p.div position="absolute" top={0} zIndex={isEndAnimation ? "0" : "-1"}>
+      <p.div
+        position="absolute"
+        top={0}
+        width="100%"
+        zIndex={isEndAnimation ? "0" : "-1"}
+      >
         <Header />
         <Flex direction="column">
           <Top />
