@@ -1,0 +1,17 @@
+name: obsidian-export
+on: [push]
+  # schedule:
+  #   # 定期実行する時間・・・①
+  #   - cron: '0 9 * * *'
+jobs:
+  build:
+    # Ubuntuの最新版環境内で処理を実行することを指定
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: supplypike/setup-bin@v3
+        with:
+          uri: 'https://github.com/zoni/obsidian-export/releases/download/v23.12.0/obsidian-export-x86_64-pc-windows-msvc.zip'
+          name: './obsidian-export'
+          version: '0.0.1'
+          command: ./obsidian-export/obsidian-export
