@@ -17,10 +17,11 @@ jobs:
           BUCKET_NAME: ${{ secrets.bucket_name }}
           API_TOKEN: ${{ secrets.api_token }}
         run: |
-        RESPONSE=$(curl -X GET "https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/r2/buckets/$BUCKET_NAME/usage" \
-        -H "Authorization: Bearer $API_TOKEN" \
-        -H "Content-Type:application/json")
-        echo "RESPONSE_JSON=$RESPONSE" >> $GITHUB_ENV
+          curl -s -X GET "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/storage/kv/namespaces/${BUCKET_NAME}/keys" \
+            -H "Authorization: Bearer ${API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -H "Accept: application/json" \
+            -d '{"limit": 100}' > /tmp/r2-bucket-usage.json
 
       - uses: actions/checkout@v3
       - uses: supplypike/setup-bin@v3
