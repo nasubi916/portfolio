@@ -27,7 +27,7 @@ jobs:
 
       - name: download obsidian-export.exe
         run: |
-          curl -L https://github.com/zoni/obsidian-export/releases/download/v23.12.0/obsidian-export-x86_64-pc-windows-msvc.zip -o file.zip"
+          curl -L https://github.com/zoni/obsidian-export/releases/download/v23.12.0/obsidian-export-x86_64-pc-windows-msvc.zip -o file.zip
 
       - name: unzip obsidian-export.exe
         run: |
