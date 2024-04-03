@@ -14,10 +14,20 @@ export async function onRenderHtml(
     ),
   );
 
-  return escapeInject`<!DOCTYPE html>
+  return escapeInject`
+    <!DOCTYPE html>
     <html lang="ja">
+      <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/public/TwemojiEggplant.svg" />
+        <link rel="icon" type="16x16" href="/public/TwemojiEggplant.svg" />
+        <link rel="apple-touch-icon" href="/public/TwemojiEggplant.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>nasubi no site</title>
+      </head>
       <body>
         <div id="page-view">${viewHtml}</div>
       </body>
-    </html>`;
+    </html>
+  `;
 }

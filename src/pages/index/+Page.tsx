@@ -11,8 +11,6 @@ import Skills from "@/components/sections/Skills";
 import Experiences from "@/components/sections/Experiences";
 import Hobbies from "@/components/sections/Hobbies";
 import { $colorScheme } from "@/stores/option";
-// import Awards from "@/components/sections/Awards";
-// import Works from "@/components/sections/Works";
 // import Products from "@/components/sections/Products";
 // import Blogs from "@/components/sections/Blogs";
 
@@ -114,8 +112,6 @@ export default function Home(): ReactElement {
           <Experiences />
           <Hobbies />
           {/*
-        <Awards />
-        <Works />
         <Products />
         <Blogs />
       */}
