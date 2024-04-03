@@ -15,7 +15,7 @@ export default defineConfig({
     extend: {
       tokens: {
         fonts: {
-          sans: { value: "Noto Sans JP Variable, sans-serif" },
+          sans: { value: "Noto Sans JP, sans-serif" },
           serif: { value: "Noto Serif JP, serif" },
         },
       },
