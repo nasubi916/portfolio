@@ -16,7 +16,7 @@ export default function Top(): ReactElement {
         src={picture}
       />
       <p.div
-        bottom={20}
+        bottom={isMobile ? 10 : 20}
         color="white"
         fontFamily="Noto serif JP"
         fontSize={isMobile ? 30 : 50}

@@ -127,7 +127,7 @@ export default function Experiences(): ReactElement {
         </Text>
       </Center>
       <Center>
-        <p.div h={1300} m={3} w={isMobile ? 500 : 700}>
+        <p.div h={1300} m={3} mb={20} w={isMobile ? 500 : 700}>
           {ExperiencesList.map((experience, index) => (
             <Experience
               key={experience.name}

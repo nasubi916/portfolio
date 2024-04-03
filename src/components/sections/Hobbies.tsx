@@ -42,7 +42,7 @@ const hobbiesList: HobbyData[] = [
     こんなあらすじだけでは伝わらない良さが詰まっているのでぜひ読んでください｡なんなら私が貸します｡
     他にも伊藤計劃のユートピアな近未来に馴染めない女の子達の壮大な自殺と世界の話｢ハーモニー｣､
     チャック・パラニュークの独特の読み応えの文章がクセになる｢ファイト・クラブ｣も大好きな本です｡
-    なので布教計画を立案中...`,
+    布教計画を立案中...`,
   },
   {
     name: "Anime",
@@ -128,11 +128,7 @@ function Hobby({
           <Text inherit>{name}</Text>
         </Flex>
         <p.div fontSize={16}>
-          <Spoiler
-            hideLabel="オタクの長尺の語りウザいから消すボタン"
-            maxHeight={200}
-            showLabel="もっとみせる"
-          >
+          <Spoiler hideLabel="" maxHeight={200} showLabel="もっとみせる">
             <Text inherit>{description}</Text>
           </Spoiler>
         </p.div>
@@ -169,6 +165,7 @@ export default function Hobbies(): ReactElement {
               gridColor={colorScheme === "light" ? "gray.9" : "gray.3"}
               h={300}
               legendProps={{ verticalAlign: "bottom" }}
+              mb={10}
               series={[
                 { name: "Program", color: "red.6" },
                 { name: "Read", color: "orange.6" },
