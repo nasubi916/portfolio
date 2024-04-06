@@ -18,6 +18,8 @@
     "@mantine/charts": "^7.7.0",
     "@mantine/core": "^7.6.2",
     "@mantine/hooks": "^7.6.2",
+    "@mdx-js/react": "^3.0.1",
+    "@mdx-js/rollup": "^3.0.1",
     "@nanostores/react": "^0.7.2",
     "nanostores": "^0.10.0",
     "react": "^18.2.0",
