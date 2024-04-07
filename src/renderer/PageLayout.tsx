@@ -7,6 +7,7 @@ import "@mantine/core/styles.css";
 import "@mantine/charts/styles.css";
 import "@fontsource/noto-serif-jp";
 import "@fontsource/noto-sans-jp";
+import 'github-markdown-css';
 
 const theme = createTheme({
   colors: {
