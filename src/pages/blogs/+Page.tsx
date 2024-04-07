@@ -1,5 +1,7 @@
 import { type ReactElement } from "react";
-import Test from "../../../articles/uploaded/test.mdx"
+import { styled as p } from "@panda/jsx";
+import "./Layout.css"
+import Test from "../../../articles/uploaded/test.md";
 
 /** @type {import('mdx/types.js').MDXComponents} */
 const components = {
@@ -9,11 +11,18 @@ const components = {
 };
 export default function Blogs(): ReactElement {
   return (
-    <div>
+    <p.div
+      alignItems="center"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+    >
       <h1>Blogs</h1>
-      <div className="markdown-body">
-        <Test components={components} />
-      </div>
-    </div>
+      <p.div w="full">
+        <div className="markdown-body">
+          <Test components={components} />
+        </div>
+      </p.div>
+    </p.div>
   );
 }

@@ -21,7 +21,6 @@
     "@mdx-js/react": "^3.0.1",
     "@mdx-js/rollup": "^3.0.1",
     "@nanostores/react": "^0.7.2",
-    "github-markdown-css": "^5.5.1",
     "nanostores": "^0.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
