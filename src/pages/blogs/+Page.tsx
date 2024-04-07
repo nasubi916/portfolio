@@ -1,6 +1,6 @@
 import { type ReactElement } from "react";
 import { styled as p } from "@panda/jsx";
-import Test from "../../../articles/test.md";
+import Test from "../../../articles/uploaded/test.md";
 
 export default function Blogs(): ReactElement {
   return (

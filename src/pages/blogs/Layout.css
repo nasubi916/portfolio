@@ -1,0 +1,68 @@
+button {
+  background-color: aqua;
+}
+
+html body h1,
+html body h2,
+html body h3,
+html body h4 {
+  font-family:
+    Noto Sans JP,
+    sans-serif;
+  color: #586e75;
+}
+p,
+li,
+td {
+  font-family:
+    Noto Sans JP,
+    sans-serif;
+}
+html body table th {
+  background-color: #93a1a1;
+  color: #eee8d5;
+}
+
+html body table tr:nth-child(even) {
+  background-color: #eee8d5;
+}
+
+h1 {
+  color: inherit;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #eee;
+  font-size: 2em;
+  font-weight: 600;
+}
+h2 {
+  color: inherit;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #eee;
+  font-size: 1.5em;
+}
+h3 {
+  color: inherit;
+  font-size: 1.25em;
+}
+h4 {
+  color: inherit;
+  font-size: 1em;
+}
+code {
+  font-family: Menlo, Monaco, Consolas, monospace;
+}
+pre {
+  font-family: Menlo, Monaco, Consolas, monospace;
+  background-color: #f8f8f8;
+  padding: 1em;
+  border-radius: 0.3em;
+  overflow-x: auto;
+}
+pre code {
+  font-family: Menlo, Monaco, Consolas, monospace;
+}
+ul li {
+  list-style-type: disc;
+}
+
+@layer reset, base, tokens, recipes, utilities;
