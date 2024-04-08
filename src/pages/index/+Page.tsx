@@ -60,9 +60,8 @@ export default function Home(): ReactElement {
         animation={enterAnimation ? "fadeout 1s" : ""}
         animationFillMode="forwards"
         background={colorScheme === "light" ? "gray.200" : "gray.900"}
-        height="100vh"
         overflow="hidden"
-        width="100vw"
+        width="100%"
       >
         <Center>
           <p.div position="absolute" textAlign="center" top="50%" zIndex={10}>

@@ -16,11 +16,11 @@ export default function Top(): ReactElement {
         src={picture}
       />
       <p.div
-        bottom={isMobile ? 10 : 20}
+        bottom={isMobile ? 5 : 10}
         color="white"
         fontFamily="Noto serif JP"
         fontSize={isMobile ? 30 : 50}
-        left={50}
+        left={isMobile ? 5 : 50}
         position="absolute"
         textAlign="center"
       >

@@ -7,11 +7,9 @@ import {
   Group,
   Card,
   Flex,
-  HoverCard,
-  Anchor,
-  Stack,
   ActionIcon,
   Transition,
+  Anchor,
 } from "@mantine/core";
 import { styled as p } from "@panda/jsx";
 import { $colorScheme } from "../../stores/option";
@@ -29,7 +27,9 @@ const skillList: SkillData[] = [
     name: "TypeScript",
     icon: "logos:typescript-icon",
     link: "https://www.typescriptlang.org",
-    description: "型がないと不安｡でも､型パズルはできない｡",
+    description: `型がないと不安｡
+    でも､型パズルはできない｡
+    サバイバルTypescriptさんいつもお世話になってます｡`,
   },
   {
     name: "Vue",
@@ -42,7 +42,7 @@ const skillList: SkillData[] = [
     name: "Nuxt",
     link: "https://nuxt.com",
     icon: "vscode-icons:file-type-nuxt",
-    description: "Vueのフレームワーク｡正直持て余してる｡",
+    description: "Vueの上位互換フレームワーク｡正直持て余してる｡",
   },
   {
     name: "React",
@@ -80,13 +80,16 @@ const skillList: SkillData[] = [
     icon: "logos:supabase-icon",
     link: "https://supabase.io",
     description:
-      "SQLが使えるのが良き｡型を自動出力してくれるのが嬉しい｡Dashboardのモダン具合がすごい｡",
+      "postgreSQLが使えるのが良き｡型を自動出力してくれるのが嬉しい｡Dashboardのモダン具合がすごい｡",
   },
   {
     name: "CloudFlare",
     icon: "logos:cloudflare-icon",
     link: "https://www.cloudflare.com",
-    description: "これから勉強します｡",
+    description: `これから勉強します｡このサイトはCloudFlare Pagesでホストしています｡
+    他にもObsidianのRemotely SaveでR2を使ってデバイス間同期をしてる｡
+    Workersも使いたい｡
+    `,
   },
   {
     name: "VSCode",
@@ -99,8 +102,10 @@ const skillList: SkillData[] = [
     name: "GitHub",
     icon: "mdi:github",
     link: "https://github.com",
-    description:
-      "CLIは使わない｡GUIで十分｡コミット､マージ､プルリクなど一通り扱える｡GitHub Actionsは使いたいけど使いこなせてない｡",
+    description: `CLIは使わない｡
+      GUIで十分｡
+      コミット､マージ､プルリク､スタッシュなど一通り扱える｡
+      GitHub Actionsは使いたいけど使いこなせてない｡`,
   },
   {
     name: "python",
@@ -113,8 +118,11 @@ const skillList: SkillData[] = [
     name: "obsidian",
     icon: "logos:obsidian-icon",
     link: "https://obsidian.md",
-    description:
-      "markdown記法で書けるメモアプリ｡開発に直接活きることはなくとも､アイデアや思考をまとめるのに便利｡QoL爆上がり｡今はBlogのCMSとして使えないか検討中｡",
+    description: `markdown記法で書けるメモアプリ｡
+      開発に直接活きることはなくとも､アイデアや思考をまとめるのに便利｡
+      これもVScodeと同じで拡張機能が秘伝のタレの如く煮詰まりがち｡
+      QoL爆上がり｡
+      今はBlogのCMSとして使えないか検討中｡`,
   },
 ];
 
@@ -159,10 +167,21 @@ function Skill({
             style={{ ...transitionStyle }}
             w="auto"
           >
-            <Flex align="center" direction="row" gap="5" mb={10}>
+            <Flex align="center" direction="row" gap="5">
               <Icon height={30} icon={skill.icon} width={30} />
               <Text inherit>{skill.name}</Text>
             </Flex>
+            <Anchor
+              c="dimmed"
+              href={skill.link}
+              mb={15}
+              pl={40}
+              size="xs"
+              style={{ lineHeight: 1 }}
+              target="_blank"
+            >
+              {skill.link}
+            </Anchor>
             <p.div fontSize={16}>
               <Text inherit>{skill.description}</Text>
             </p.div>
@@ -195,76 +214,31 @@ export default function Skills(): ReactElement {
           <Card h="auto" radius="xl" shadow="xl">
             <Group align="center" gap={5} justify="center" py={10}>
               {skillList.map((skill) => (
-                <HoverCard
-                  key="skill"
-                  closeDelay={400}
-                  openDelay={200}
-                  position="top"
-                  shadow="xl"
-                >
-                  <HoverCard.Target>
-                    <ActionIcon
-                      onClick={() => {
-                        setSelected(skillList.indexOf(skill));
-                      }}
-                      size="xl"
-                      variant="transparent"
-                    >
-                      <Icon
-                        key={skill.name}
-                        height={40}
-                        icon={skill.icon}
-                        width={40}
-                      />
-                    </ActionIcon>
-                  </HoverCard.Target>
-                  <HoverCard.Dropdown>
-                    <p.div fontFamily="sans">
-                      <Group>
-                        <Icon
-                          key={skill.name}
-                          height={50}
-                          icon={skill.icon}
-                          width={50}
-                        />
-                        <Stack gap={5}>
-                          <Text
-                            fw={700}
-                            inherit
-                            size="sm"
-                            style={{ lineHeight: 1 }}
-                          >
-                            {skill.name}
-                          </Text>
-                          <Anchor
-                            c="dimmed"
-                            href={skill.link}
-                            size="xs"
-                            style={{ lineHeight: 1 }}
-                            target="_blank"
-                          >
-                            {skill.link}
-                          </Anchor>
-                        </Stack>
-                      </Group>
-                      <Text inherit mt="md" size="sm">
-                        ここに概要とGithubのスター数とかがあれば書く
-                      </Text>
-                      <Group gap="xl" mt="md">
-                        <Text inherit size="sm">
-                          <b>????</b> Stars
-                        </Text>
-                      </Group>
-                    </p.div>
-                  </HoverCard.Dropdown>
-                </HoverCard>
+                <p.div key={skill.name}>
+                  <ActionIcon
+                    onClick={() => {
+                      setSelected(skillList.indexOf(skill));
+                    }}
+                    size="xl"
+                    variant="transparent"
+                  >
+                    <Icon
+                      key={skill.name}
+                      height={40}
+                      icon={skill.icon}
+                      width={40}
+                    />
+                  </ActionIcon>
+                </p.div>
               ))}
             </Group>
           </Card>
         </p.div>
       </Center>
       <Center>
-        <Skill selected={selected} skill={skillList[selected]} />
+        <p.div maxW="600">
+          <Skill selected={selected} skill={skillList[selected]} />
+        </p.div>
       </Center>
     </p.div>
   );
