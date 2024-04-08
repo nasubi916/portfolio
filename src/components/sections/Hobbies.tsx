@@ -121,7 +121,7 @@ function Hobby({
   $isMobile.set(useMediaQuery(`(max-width: ${em(750)})`) ?? false);
   const isMobile = $isMobile.value ?? false;
   return (
-    <Card h="auto" radius="lg" shadow="xl" w={isMobile ? 400 : 400}>
+    <Card h="auto" radius="lg" shadow="xl" w={isMobile ? 370 : 400}>
       <Flex align="center" direction="column" gap={10}>
         <Flex align="center" direction="row" gap={5}>
           <Icon height={30} icon={icon} width={30} />
@@ -184,7 +184,7 @@ export default function Hobbies(): ReactElement {
                 const seconds = value % 60;
                 return `${hours}h ${minutes}m ${seconds}s`;
               }}
-              w={isMobile ? 400 : 700}
+              w={isMobile ? 370 : 700}
               withLegend
             />
             <p.div position="absolute" right={0} top={-7}>

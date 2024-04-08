@@ -62,7 +62,7 @@ export default function Home(): ReactElement {
         background={colorScheme === "light" ? "gray.200" : "gray.900"}
         height="100vh"
         overflow="hidden"
-        width="100vw"
+        width="100%"
       >
         <Center>
           <p.div position="absolute" textAlign="center" top="50%" zIndex={10}>
