@@ -159,7 +159,7 @@ function Skill({
         <p.div fontFamily="sans" fontSize={25}>
           <Card
             key={skill.name}
-            h={200}
+            h="auto"
             mx={30}
             padding="md"
             radius="xl"
