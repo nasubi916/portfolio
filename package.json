@@ -52,5 +52,9 @@
     "typescript": "^5.4.3",
     "vite": "^5.2.0",
     "vite-tsconfig-paths": "^4.3.2"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/nasubi916/portfolio.git",
+  "author": "nasubi916 <r916nis@gmai.com>",
+  "license": "MIT"
 }
