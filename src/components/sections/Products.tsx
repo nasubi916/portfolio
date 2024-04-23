@@ -15,8 +15,8 @@ import { useMediaQuery } from "@mantine/hooks";
 import { styled as p } from "@panda/jsx";
 import { $colorScheme, $isMobile } from "../../stores/option";
 
-import fookeys from "../../assets/fookeys.mp4";
-import m3 from "../../assets/my-monthly-mix.mp4";
+import fookeys from "@/assets/fookeys.mp4";
+import m3 from "@/assets/my-monthly-mix.mp4";
 
 type ProductsData = {
   name: string;
