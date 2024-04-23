@@ -11,7 +11,7 @@ import Skills from "@/components/sections/Skills";
 import Experiences from "@/components/sections/Experiences";
 import Hobbies from "@/components/sections/Hobbies";
 import { $colorScheme } from "@/stores/option";
-// import Products from "@/components/sections/Products";
+import Products from "@/components/sections/Products";
 // import Blogs from "@/components/sections/Blogs";
 
 export default function Home(): ReactElement {
@@ -110,9 +110,9 @@ export default function Home(): ReactElement {
           <Profile />
           <Skills />
           <Experiences />
+          <Products />
           <Hobbies />
           {/*
-        <Products />
         <Blogs />
       */}
         </Flex>
