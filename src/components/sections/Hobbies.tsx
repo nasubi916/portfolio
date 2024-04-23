@@ -145,7 +145,6 @@ export default function Hobbies(): ReactElement {
 
   return (
     <p.div
-      bg={colorScheme === "light" ? "gray.400" : "gray.800"}
       fontFamily="sans"
       fontSize={30}
       pb={20}
