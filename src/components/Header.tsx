@@ -21,7 +21,7 @@ export default function Header(): ReactElement {
   return (
     <p.div h="50" mt={3} mx={3}>
       <Flex align="center" direction="row">
-        <Text size="xl">nasubi.dev</Text>
+      <Text size="xl">nasubi.dev   🚧改修予定🚧</Text>
         <Flex gap={10} ml="auto">
           <ActionIcon
             aria-label="Twitter Account"
